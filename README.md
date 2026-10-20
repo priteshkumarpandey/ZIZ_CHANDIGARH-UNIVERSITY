@@ -18,7 +18,7 @@ Chandigarh University
 [PRITESH KUMAR PANDEY, pandeypritesh958@gmail.com]
 
 ## Links
-- Demo video (20+ minutes): [PASTE YOUTUBE UNLISTED LINK]
+- Project walkthrough and live demo: [Watch on YouTube](https://youtu.be/DC1_NouZk5E)
 - Presentation: [docs/presentation/ZIZ_GlucoTwin_Presentation.pdf](docs/presentation/ZIZ_GlucoTwin_Presentation.pdf)
 - Architecture diagram: [docs/architecture/GlucoTwin_Architecture.pdf](docs/architecture/GlucoTwin_Architecture.pdf)
 - Screenshots: [docs/screenshots](docs/screenshots)
