@@ -1,0 +1,2224 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "GlucoTwin v1 API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "System"
+        ],
+        "summary": "Health Check",
+        "operationId": "health_check_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/twin/patients": {
+      "get": {
+        "tags": [
+          "Digital Twin & Patients"
+        ],
+        "summary": "List Patients",
+        "operationId": "list_patients_twin_patients_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PatientProfile"
+                  },
+                  "type": "array",
+                  "title": "Response List Patients Twin Patients Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/twin/{patient_id}/state": {
+      "get": {
+        "tags": [
+          "Digital Twin & Patients"
+        ],
+        "summary": "Get Patient Twin State",
+        "operationId": "get_patient_twin_state_twin__patient_id__state_get",
+        "parameters": [
+          {
+            "name": "patient_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Patient Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TwinStateResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/twin/{patient_id}/cgm": {
+      "get": {
+        "tags": [
+          "Digital Twin & Patients"
+        ],
+        "summary": "Get Patient Cgm",
+        "operationId": "get_patient_cgm_twin__patient_id__cgm_get",
+        "parameters": [
+          {
+            "name": "patient_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Patient Id"
+            }
+          },
+          {
+            "name": "days",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 14,
+              "minimum": 1,
+              "default": 2,
+              "title": "Days"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CGMReading"
+                  },
+                  "title": "Response Get Patient Cgm Twin  Patient Id  Cgm Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/twin/{patient_id}/personalization": {
+      "get": {
+        "tags": [
+          "Digital Twin & Patients"
+        ],
+        "summary": "Get Patient Personalization",
+        "operationId": "get_patient_personalization_twin__patient_id__personalization_get",
+        "parameters": [
+          {
+            "name": "patient_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Patient Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/twin/{patient_id}/personalization/train": {
+      "post": {
+        "tags": [
+          "Digital Twin & Patients"
+        ],
+        "summary": "Trigger Personalization Train",
+        "operationId": "trigger_personalization_train_twin__patient_id__personalization_train_post",
+        "parameters": [
+          {
+            "name": "patient_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Patient Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/twin/{patient_id}/personalization/rollback": {
+      "post": {
+        "tags": [
+          "Digital Twin & Patients"
+        ],
+        "summary": "Rollback Personalization Adapter",
+        "operationId": "rollback_personalization_adapter_twin__patient_id__personalization_rollback_post",
+        "parameters": [
+          {
+            "name": "patient_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Patient Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/operating-thresholds": {
+      "get": {
+        "tags": [
+          "Glucose Forecasting"
+        ],
+        "summary": "Get Operating Thresholds",
+        "operationId": "get_operating_thresholds_operating_thresholds_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/predict": {
+      "post": {
+        "tags": [
+          "Glucose Forecasting"
+        ],
+        "summary": "Predict Glucose Forecast",
+        "operationId": "predict_glucose_forecast_predict_post",
+        "parameters": [
+          {
+            "name": "fallback",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Use LightGBM fallback model if true",
+              "default": false,
+              "title": "Fallback"
+            },
+            "description": "Use LightGBM fallback model if true"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PredictRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForecastResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/simulate/foods": {
+      "get": {
+        "tags": [
+          "What-If Simulation"
+        ],
+        "summary": "List Food Catalog",
+        "operationId": "list_food_catalog_simulate_foods_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/FoodItem"
+                  },
+                  "type": "array",
+                  "title": "Response List Food Catalog Simulate Foods Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/simulate": {
+      "post": {
+        "tags": [
+          "What-If Simulation"
+        ],
+        "summary": "Execute What If Simulation",
+        "operationId": "execute_what_if_simulation_simulate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimulateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SimulationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/explain/{patient_id}": {
+      "get": {
+        "tags": [
+          "Explainability"
+        ],
+        "summary": "Get Model Explanation",
+        "operationId": "get_model_explanation_explain__patient_id__get",
+        "parameters": [
+          {
+            "name": "patient_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Patient Id"
+            }
+          },
+          {
+            "name": "horizon",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 120,
+              "minimum": 30,
+              "default": 60,
+              "title": "Horizon"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExplainabilityResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/summary/{patient_id}": {
+      "get": {
+        "tags": [
+          "Clinical Summary"
+        ],
+        "summary": "Get Clinical Summary",
+        "operationId": "get_clinical_summary_summary__patient_id__get",
+        "parameters": [
+          {
+            "name": "patient_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Patient Id"
+            }
+          },
+          {
+            "name": "window",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 168,
+              "minimum": 1,
+              "description": "Monitoring window in hours (default: 24)",
+              "default": 24,
+              "title": "Window"
+            },
+            "description": "Monitoring window in hours (default: 24)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClinicalSummaryResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ActivityRecord": {
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp"
+          },
+          "activity_type": {
+            "type": "string",
+            "title": "Activity Type"
+          },
+          "duration_minutes": {
+            "type": "integer",
+            "title": "Duration Minutes"
+          },
+          "mets": {
+            "type": "number",
+            "title": "Mets"
+          },
+          "steps_estimate": {
+            "type": "integer",
+            "title": "Steps Estimate"
+          }
+        },
+        "type": "object",
+        "required": [
+          "timestamp",
+          "activity_type",
+          "duration_minutes",
+          "mets",
+          "steps_estimate"
+        ],
+        "title": "ActivityRecord"
+      },
+      "AdverseEventType": {
+        "type": "string",
+        "enum": [
+          "none",
+          "hypoglycemia_level_1",
+          "hypoglycemia_level_2",
+          "hyperglycemia_level_1",
+          "hyperglycemia_level_2"
+        ],
+        "title": "AdverseEventType"
+      },
+      "CGMReading": {
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "title": "Patient Id"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp"
+          },
+          "glucose_mgdl": {
+            "type": "number",
+            "title": "Glucose Mgdl"
+          },
+          "trend_arrow": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Trend Arrow",
+            "default": "Flat"
+          },
+          "heart_rate_bpm": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Heart Rate Bpm"
+          },
+          "steps": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Steps",
+            "default": 0
+          },
+          "mets": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mets",
+            "default": 1.0
+          }
+        },
+        "type": "object",
+        "required": [
+          "patient_id",
+          "timestamp",
+          "glucose_mgdl"
+        ],
+        "title": "CGMReading"
+      },
+      "ClinicalMetrics": {
+        "properties": {
+          "time_in_range_percentage": {
+            "type": "number",
+            "title": "Time In Range Percentage"
+          },
+          "time_above_range_percentage": {
+            "type": "number",
+            "title": "Time Above Range Percentage"
+          },
+          "time_above_range_level2_percentage": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time Above Range Level2 Percentage",
+            "default": 0.0
+          },
+          "time_below_range_percentage": {
+            "type": "number",
+            "title": "Time Below Range Percentage"
+          },
+          "time_below_range_level2_percentage": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time Below Range Level2 Percentage",
+            "default": 0.0
+          },
+          "gmi": {
+            "type": "number",
+            "title": "Gmi"
+          },
+          "mean_glucose": {
+            "type": "number",
+            "title": "Mean Glucose"
+          },
+          "standard_deviation": {
+            "type": "number",
+            "title": "Standard Deviation"
+          },
+          "coefficient_of_variation": {
+            "type": "number",
+            "title": "Coefficient Of Variation"
+          }
+        },
+        "type": "object",
+        "required": [
+          "time_in_range_percentage",
+          "time_above_range_percentage",
+          "time_below_range_percentage",
+          "gmi",
+          "mean_glucose",
+          "standard_deviation",
+          "coefficient_of_variation"
+        ],
+        "title": "ClinicalMetrics"
+      },
+      "ClinicalSummaryResponse": {
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "title": "Patient Id"
+          },
+          "patient_name": {
+            "type": "string",
+            "title": "Patient Name"
+          },
+          "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generated At"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/ClinicalMetrics"
+          },
+          "adverse_event_count_24h": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Adverse Event Count 24H"
+          },
+          "latest_forecast": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/ForecastPoint"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Forecast"
+          },
+          "adverse_events_usable": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Adverse Events Usable"
+          },
+          "personalization_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Personalization Status",
+            "default": "calibrated"
+          },
+          "key_findings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Key Findings"
+          },
+          "actionable_recommendations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Actionable Recommendations"
+          },
+          "plain_language_narrative": {
+            "type": "string",
+            "title": "Plain Language Narrative"
+          },
+          "is_llm_enhanced": {
+            "type": "boolean",
+            "title": "Is Llm Enhanced"
+          },
+          "disclaimer": {
+            "type": "string",
+            "title": "Disclaimer",
+            "default": "Decision support only. Not intended as medical diagnosis or direct prescription."
+          },
+          "is_synthetic": {
+            "type": "boolean",
+            "title": "Is Synthetic",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "patient_id",
+          "patient_name",
+          "generated_at",
+          "metrics",
+          "adverse_event_count_24h",
+          "key_findings",
+          "actionable_recommendations",
+          "plain_language_narrative",
+          "is_llm_enhanced"
+        ],
+        "title": "ClinicalSummaryResponse"
+      },
+      "DietaryHabit": {
+        "type": "string",
+        "enum": [
+          "Vegetarian",
+          "Non-Vegetarian",
+          "Eggetarian",
+          "Jain Vegetarian"
+        ],
+        "title": "DietaryHabit"
+      },
+      "ExplainabilityResponse": {
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "title": "Patient Id"
+          },
+          "horizon_minutes": {
+            "type": "integer",
+            "title": "Horizon Minutes"
+          },
+          "model_name": {
+            "type": "string",
+            "title": "Model Name",
+            "default": "Multimodal GRU"
+          },
+          "top_features": {
+            "items": {
+              "$ref": "#/components/schemas/FeatureAttribution"
+            },
+            "type": "array",
+            "title": "Top Features"
+          },
+          "gru_permutation_importance": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/FeatureAttribution"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gru Permutation Importance"
+          },
+          "lightgbm_shap_values": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/FeatureAttribution"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lightgbm Shap Values"
+          },
+          "temporal_attention_weights": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Temporal Attention Weights"
+          },
+          "static_covariate_weights": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Static Covariate Weights"
+          }
+        },
+        "type": "object",
+        "required": [
+          "patient_id",
+          "horizon_minutes",
+          "top_features",
+          "temporal_attention_weights",
+          "static_covariate_weights"
+        ],
+        "title": "ExplainabilityResponse"
+      },
+      "FeatureAttribution": {
+        "properties": {
+          "feature_name": {
+            "type": "string",
+            "title": "Feature Name"
+          },
+          "shap_value": {
+            "type": "number",
+            "title": "Shap Value"
+          },
+          "base_value": {
+            "type": "number",
+            "title": "Base Value"
+          },
+          "user_value": {
+            "type": "number",
+            "title": "User Value"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model"
+          }
+        },
+        "type": "object",
+        "required": [
+          "feature_name",
+          "shap_value",
+          "base_value",
+          "user_value",
+          "description"
+        ],
+        "title": "FeatureAttribution"
+      },
+      "FoodItem": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "regional_category": {
+            "type": "string",
+            "title": "Regional Category"
+          },
+          "serving_size_g": {
+            "type": "number",
+            "title": "Serving Size G"
+          },
+          "carbohydrates_g": {
+            "type": "number",
+            "title": "Carbohydrates G"
+          },
+          "fiber_g": {
+            "type": "number",
+            "title": "Fiber G"
+          },
+          "protein_g": {
+            "type": "number",
+            "title": "Protein G"
+          },
+          "fat_g": {
+            "type": "number",
+            "title": "Fat G"
+          },
+          "glycemic_index": {
+            "type": "number",
+            "title": "Glycemic Index"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "derived from IFCT 2017 raw ingredient values (local extraction, not redistributed) and team recipe assumptions"
+          },
+          "is_approximate": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Approximate",
+            "default": false
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          },
+          "composition_source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Composition Source",
+            "default": "derived from IFCT 2017 raw ingredient values (local extraction, not redistributed) and team recipe assumptions"
+          },
+          "gi_source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gi Source",
+            "default": "approximate, not verified"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "regional_category",
+          "serving_size_g",
+          "carbohydrates_g",
+          "fiber_g",
+          "protein_g",
+          "fat_g",
+          "glycemic_index"
+        ],
+        "title": "FoodItem"
+      },
+      "ForecastPoint": {
+        "properties": {
+          "horizon_minutes": {
+            "type": "integer",
+            "title": "Horizon Minutes"
+          },
+          "target_timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Target Timestamp"
+          },
+          "q10": {
+            "type": "number",
+            "title": "Q10"
+          },
+          "q50": {
+            "type": "number",
+            "title": "Q50"
+          },
+          "q90": {
+            "type": "number",
+            "title": "Q90"
+          },
+          "calibrated_lower_95": {
+            "type": "number",
+            "title": "Calibrated Lower 95"
+          },
+          "calibrated_upper_95": {
+            "type": "number",
+            "title": "Calibrated Upper 95"
+          },
+          "spike_risk_probability": {
+            "type": "number",
+            "title": "Spike Risk Probability"
+          },
+          "hypo_risk_probability": {
+            "type": "number",
+            "title": "Hypo Risk Probability"
+          },
+          "hyper_risk_probability": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hyper Risk Probability"
+          },
+          "severe_hyper_risk_probability": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Severe Hyper Risk Probability"
+          },
+          "predicted_event": {
+            "$ref": "#/components/schemas/AdverseEventType"
+          },
+          "operating_thresholds": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "number"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Operating Thresholds"
+          },
+          "event_reliabilities": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "boolean"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Event Reliabilities"
+          },
+          "reliability_notes": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reliability Notes"
+          },
+          "alert_usable": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "boolean"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Alert Usable"
+          },
+          "risk_labels": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Risk Labels"
+          },
+          "operating_metrics": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Operating Metrics"
+          }
+        },
+        "type": "object",
+        "required": [
+          "horizon_minutes",
+          "target_timestamp",
+          "q10",
+          "q50",
+          "q90",
+          "calibrated_lower_95",
+          "calibrated_upper_95",
+          "spike_risk_probability",
+          "hypo_risk_probability",
+          "predicted_event"
+        ],
+        "title": "ForecastPoint"
+      },
+      "ForecastResponse": {
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "title": "Patient Id"
+          },
+          "forecast_generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Forecast Generated At"
+          },
+          "current_glucose": {
+            "type": "number",
+            "title": "Current Glucose"
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "forecast_horizons": {
+            "items": {
+              "$ref": "#/components/schemas/ForecastPoint"
+            },
+            "type": "array",
+            "title": "Forecast Horizons"
+          },
+          "adverse_event_warning": {
+            "type": "boolean",
+            "title": "Adverse Event Warning"
+          },
+          "summary_message": {
+            "type": "string",
+            "title": "Summary Message"
+          },
+          "inference_latency_ms": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Inference Latency Ms"
+          },
+          "serving_fold": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Serving Fold"
+          },
+          "operating_thresholds_summary": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Operating Thresholds Summary"
+          },
+          "is_synthetic": {
+            "type": "boolean",
+            "title": "Is Synthetic",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "patient_id",
+          "forecast_generated_at",
+          "current_glucose",
+          "model_version",
+          "forecast_horizons",
+          "adverse_event_warning",
+          "summary_message"
+        ],
+        "title": "ForecastResponse"
+      },
+      "Gender": {
+        "type": "string",
+        "enum": [
+          "male",
+          "female",
+          "other"
+        ],
+        "title": "Gender"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "InterventionItem": {
+        "properties": {
+          "intervention_type": {
+            "type": "string",
+            "title": "Intervention Type",
+            "default": "meal"
+          },
+          "food_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Food Name"
+          },
+          "carbs_g": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Carbs G",
+            "default": 0.0
+          },
+          "protein_g": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Protein G",
+            "default": 0.0
+          },
+          "fat_g": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fat G",
+            "default": 0.0
+          },
+          "fiber_g": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fiber G",
+            "default": 0.0
+          },
+          "glycemic_index": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Glycemic Index"
+          },
+          "activity_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Activity Type"
+          },
+          "duration_minutes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration Minutes",
+            "default": 0
+          },
+          "mets": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mets",
+            "default": 1.0
+          },
+          "offset_minutes": {
+            "type": "integer",
+            "title": "Offset Minutes",
+            "default": 0
+          },
+          "provenance": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Provenance"
+          },
+          "is_approximate": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Approximate",
+            "default": false
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          }
+        },
+        "type": "object",
+        "title": "InterventionItem"
+      },
+      "MealRecord": {
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/FoodItem"
+            },
+            "type": "array",
+            "title": "Items",
+            "default": []
+          },
+          "total_carbohydrates_g": {
+            "type": "number",
+            "title": "Total Carbohydrates G"
+          },
+          "total_fiber_g": {
+            "type": "number",
+            "title": "Total Fiber G"
+          },
+          "total_protein_g": {
+            "type": "number",
+            "title": "Total Protein G"
+          },
+          "total_fat_g": {
+            "type": "number",
+            "title": "Total Fat G"
+          },
+          "effective_glycemic_load": {
+            "type": "number",
+            "title": "Effective Glycemic Load"
+          }
+        },
+        "type": "object",
+        "required": [
+          "timestamp",
+          "name",
+          "total_carbohydrates_g",
+          "total_fiber_g",
+          "total_protein_g",
+          "total_fat_g",
+          "effective_glycemic_load"
+        ],
+        "title": "MealRecord"
+      },
+      "MedicationClass": {
+        "type": "string",
+        "enum": [
+          "Biguanide (Metformin)",
+          "Sulfonylurea (e.g. Glimepiride)",
+          "DPP-4 Inhibitor (e.g. Teneligliptin)",
+          "SGLT2 Inhibitor (e.g. Dapagliflozin)",
+          "GLP-1 RA (e.g. Semaglutide)",
+          "Basal Insulin (e.g. Glargine)",
+          "Bolus Insulin (e.g. Lispro)"
+        ],
+        "title": "MedicationClass"
+      },
+      "PatientProfile": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "age": {
+            "type": "integer",
+            "title": "Age"
+          },
+          "gender": {
+            "$ref": "#/components/schemas/Gender"
+          },
+          "region": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Region"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "occupation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Occupation"
+          },
+          "dietary_habit": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DietaryHabit"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "bmi": {
+            "type": "number",
+            "title": "Bmi"
+          },
+          "hba1c": {
+            "type": "number",
+            "title": "Hba1C"
+          },
+          "diabetes_duration_years": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Diabetes Duration Years"
+          },
+          "egfr": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Egfr"
+          },
+          "systolic_bp": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Systolic Bp"
+          },
+          "diastolic_bp": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Diastolic Bp"
+          },
+          "fasting_glucose": {
+            "type": "number",
+            "title": "Fasting Glucose"
+          },
+          "postprandial_glucose": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Postprandial Glucose"
+          },
+          "active_medications": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Active Medications"
+          },
+          "medication_classes": {
+            "items": {
+              "$ref": "#/components/schemas/MedicationClass"
+            },
+            "type": "array",
+            "title": "Medication Classes"
+          },
+          "phenotype_notes": {
+            "type": "string",
+            "title": "Phenotype Notes",
+            "default": ""
+          },
+          "ethnicity": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ethnicity"
+          },
+          "matched_participant_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matched Participant Id"
+          },
+          "matched_test_fold": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matched Test Fold"
+          },
+          "linkage_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Linkage Type"
+          },
+          "typical_meal_templates": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Typical Meal Templates"
+          },
+          "is_synthetic": {
+            "type": "boolean",
+            "title": "Is Synthetic",
+            "default": false
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "age",
+          "gender",
+          "bmi",
+          "hba1c",
+          "fasting_glucose"
+        ],
+        "title": "PatientProfile"
+      },
+      "PredictRequest": {
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "title": "Patient Id"
+          },
+          "recent_cgm_series": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Recent Cgm Series"
+          },
+          "recent_carbs_g": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recent Carbs G",
+            "default": 0.0
+          },
+          "recent_glycemic_index": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recent Glycemic Index",
+            "default": 0.0
+          },
+          "recent_heart_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recent Heart Rate",
+            "default": 72.0
+          },
+          "recent_mets": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recent Mets",
+            "default": 1.0
+          },
+          "as_of": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "As Of"
+          }
+        },
+        "type": "object",
+        "required": [
+          "patient_id",
+          "recent_cgm_series"
+        ],
+        "title": "PredictRequest"
+      },
+      "Region": {
+        "type": "string",
+        "enum": [
+          "North India",
+          "South India",
+          "East India",
+          "West India"
+        ],
+        "title": "Region"
+      },
+      "SimulateRequest": {
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "title": "Patient Id"
+          },
+          "as_of": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "As Of"
+          },
+          "interventions": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/InterventionItem"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Interventions"
+          },
+          "recent_cgm_series": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "number"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recent Cgm Series"
+          },
+          "baseline_cgm": {
+            "items": {
+              "$ref": "#/components/schemas/CGMReading"
+            },
+            "type": "array",
+            "title": "Baseline Cgm",
+            "default": []
+          },
+          "planned_meal": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MealRecord"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "planned_activity": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ActivityRecord"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "simulation_duration_minutes": {
+            "type": "integer",
+            "title": "Simulation Duration Minutes",
+            "default": 180
+          },
+          "calibrate_meal_response": {
+            "type": "boolean",
+            "title": "Calibrate Meal Response",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "patient_id"
+        ],
+        "title": "SimulateRequest"
+      },
+      "SimulationResponse": {
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "title": "Patient Id"
+          },
+          "simulated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Simulated At"
+          },
+          "timestamps": {
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "type": "array",
+            "title": "Timestamps"
+          },
+          "baseline_trajectory": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Baseline Trajectory"
+          },
+          "scenario_trajectory": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Scenario Trajectory"
+          },
+          "scenario_q10": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Scenario Q10"
+          },
+          "scenario_q90": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Scenario Q90"
+          },
+          "baseline_peak_glucose": {
+            "type": "number",
+            "title": "Baseline Peak Glucose"
+          },
+          "scenario_peak_glucose": {
+            "type": "number",
+            "title": "Scenario Peak Glucose"
+          },
+          "peak_reduction_mgdl": {
+            "type": "number",
+            "title": "Peak Reduction Mgdl"
+          },
+          "peak_change_mgdl": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Peak Change Mgdl"
+          },
+          "baseline_horizons": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "additionalProperties": {
+                    "type": "number"
+                  },
+                  "type": "object"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Horizons"
+          },
+          "scenario_horizons": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "additionalProperties": {
+                    "type": "number"
+                  },
+                  "type": "object"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scenario Horizons"
+          },
+          "deltas": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "number"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Deltas"
+          },
+          "provenance": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Provenance"
+          },
+          "interventions_applied": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Interventions Applied"
+          },
+          "constraint_applied": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Constraint Applied",
+            "default": false
+          },
+          "constraint_correction_mgdl": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Constraint Correction Mgdl",
+            "default": 0.0
+          },
+          "clinical_takeaway": {
+            "type": "string",
+            "title": "Clinical Takeaway"
+          },
+          "is_synthetic": {
+            "type": "boolean",
+            "title": "Is Synthetic",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "patient_id",
+          "simulated_at",
+          "timestamps",
+          "baseline_trajectory",
+          "scenario_trajectory",
+          "scenario_q10",
+          "scenario_q90",
+          "baseline_peak_glucose",
+          "scenario_peak_glucose",
+          "peak_reduction_mgdl",
+          "clinical_takeaway"
+        ],
+        "title": "SimulationResponse"
+      },
+      "TwinStateResponse": {
+        "properties": {
+          "patient": {
+            "$ref": "#/components/schemas/PatientProfile"
+          },
+          "current_glucose": {
+            "type": "number",
+            "title": "Current Glucose"
+          },
+          "trend_arrow": {
+            "type": "string",
+            "title": "Trend Arrow"
+          },
+          "last_updated": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Last Updated"
+          },
+          "active_adverse_events": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Active Adverse Events"
+          },
+          "is_streaming": {
+            "type": "boolean",
+            "title": "Is Streaming"
+          },
+          "is_synthetic": {
+            "type": "boolean",
+            "title": "Is Synthetic",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "patient",
+          "current_glucose",
+          "trend_arrow",
+          "last_updated",
+          "active_adverse_events",
+          "is_streaming"
+        ],
+        "title": "TwinStateResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

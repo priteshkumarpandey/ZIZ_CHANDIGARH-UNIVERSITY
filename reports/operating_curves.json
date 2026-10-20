@@ -1,0 +1,1322 @@
+{
+  "hyperglycemia_30m": [
+    {
+      "threshold": 0.05,
+      "recall": 0.3993,
+      "precision": 0.2503,
+      "false_alerts_per_patient_day": 2.34
+    },
+    {
+      "threshold": 0.1,
+      "recall": 0.5287,
+      "precision": 0.356,
+      "false_alerts_per_patient_day": 1.97
+    },
+    {
+      "threshold": 0.15,
+      "recall": 0.5847,
+      "precision": 0.4337,
+      "false_alerts_per_patient_day": 1.58
+    },
+    {
+      "threshold": 0.2,
+      "recall": 0.6386,
+      "precision": 0.5126,
+      "false_alerts_per_patient_day": 1.23
+    },
+    {
+      "threshold": 0.25,
+      "recall": 0.6701,
+      "precision": 0.5698,
+      "false_alerts_per_patient_day": 1.0
+    },
+    {
+      "threshold": 0.3,
+      "recall": 0.6695,
+      "precision": 0.5809,
+      "false_alerts_per_patient_day": 0.93
+    },
+    {
+      "threshold": 0.35,
+      "recall": 0.6571,
+      "precision": 0.6093,
+      "false_alerts_per_patient_day": 0.79
+    },
+    {
+      "threshold": 0.4,
+      "recall": 0.6382,
+      "precision": 0.6328,
+      "false_alerts_per_patient_day": 0.68
+    },
+    {
+      "threshold": 0.45,
+      "recall": 0.6047,
+      "precision": 0.6123,
+      "false_alerts_per_patient_day": 0.68
+    },
+    {
+      "threshold": 0.5,
+      "recall": 0.5772,
+      "precision": 0.6073,
+      "false_alerts_per_patient_day": 0.66
+    },
+    {
+      "threshold": 0.55,
+      "recall": 0.5343,
+      "precision": 0.5892,
+      "false_alerts_per_patient_day": 0.65
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.497,
+      "precision": 0.577,
+      "false_alerts_per_patient_day": 0.62
+    },
+    {
+      "threshold": 0.65,
+      "recall": 0.4478,
+      "precision": 0.5436,
+      "false_alerts_per_patient_day": 0.62
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.3975,
+      "precision": 0.5079,
+      "false_alerts_per_patient_day": 0.62
+    },
+    {
+      "threshold": 0.75,
+      "recall": 0.3693,
+      "precision": 0.4936,
+      "false_alerts_per_patient_day": 0.63
+    },
+    {
+      "threshold": 0.8,
+      "recall": 0.3009,
+      "precision": 0.4381,
+      "false_alerts_per_patient_day": 0.62
+    },
+    {
+      "threshold": 0.85,
+      "recall": 0.2281,
+      "precision": 0.389,
+      "false_alerts_per_patient_day": 0.58
+    },
+    {
+      "threshold": 0.9,
+      "recall": 0.166,
+      "precision": 0.3293,
+      "false_alerts_per_patient_day": 0.52
+    }
+  ],
+  "hyperglycemia_60m": [
+    {
+      "threshold": 0.05,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.1,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.15,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.2,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.25,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.3,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.35,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.01
+    },
+    {
+      "threshold": 0.4,
+      "recall": 0.0095,
+      "precision": 0.0275,
+      "false_alerts_per_patient_day": 0.2
+    },
+    {
+      "threshold": 0.45,
+      "recall": 0.046,
+      "precision": 0.0529,
+      "false_alerts_per_patient_day": 0.66
+    },
+    {
+      "threshold": 0.5,
+      "recall": 0.0626,
+      "precision": 0.1048,
+      "false_alerts_per_patient_day": 0.77
+    },
+    {
+      "threshold": 0.55,
+      "recall": 0.0655,
+      "precision": 0.0805,
+      "false_alerts_per_patient_day": 1.36
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.04
+    },
+    {
+      "threshold": 0.65,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.75,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.8,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.85,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.9,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    }
+  ],
+  "hyperglycemia_120m": [
+    {
+      "threshold": 0.05,
+      "recall": 0.143,
+      "precision": 0.1335,
+      "false_alerts_per_patient_day": 2.23
+    },
+    {
+      "threshold": 0.1,
+      "recall": 0.2131,
+      "precision": 0.1956,
+      "false_alerts_per_patient_day": 1.98
+    },
+    {
+      "threshold": 0.15,
+      "recall": 0.2268,
+      "precision": 0.2157,
+      "false_alerts_per_patient_day": 1.71
+    },
+    {
+      "threshold": 0.2,
+      "recall": 0.2252,
+      "precision": 0.231,
+      "false_alerts_per_patient_day": 1.45
+    },
+    {
+      "threshold": 0.25,
+      "recall": 0.214,
+      "precision": 0.2469,
+      "false_alerts_per_patient_day": 1.27
+    },
+    {
+      "threshold": 0.3,
+      "recall": 0.2042,
+      "precision": 0.2651,
+      "false_alerts_per_patient_day": 1.1
+    },
+    {
+      "threshold": 0.35,
+      "recall": 0.1893,
+      "precision": 0.2729,
+      "false_alerts_per_patient_day": 0.94
+    },
+    {
+      "threshold": 0.4,
+      "recall": 0.1764,
+      "precision": 0.2884,
+      "false_alerts_per_patient_day": 0.83
+    },
+    {
+      "threshold": 0.45,
+      "recall": 0.1788,
+      "precision": 0.3139,
+      "false_alerts_per_patient_day": 0.73
+    },
+    {
+      "threshold": 0.5,
+      "recall": 0.1652,
+      "precision": 0.3149,
+      "false_alerts_per_patient_day": 0.67
+    },
+    {
+      "threshold": 0.55,
+      "recall": 0.162,
+      "precision": 0.3395,
+      "false_alerts_per_patient_day": 0.58
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.1484,
+      "precision": 0.3544,
+      "false_alerts_per_patient_day": 0.52
+    },
+    {
+      "threshold": 0.65,
+      "recall": 0.1498,
+      "precision": 0.3817,
+      "false_alerts_per_patient_day": 0.46
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.1439,
+      "precision": 0.3827,
+      "false_alerts_per_patient_day": 0.45
+    },
+    {
+      "threshold": 0.75,
+      "recall": 0.1472,
+      "precision": 0.4237,
+      "false_alerts_per_patient_day": 0.39
+    },
+    {
+      "threshold": 0.8,
+      "recall": 0.1509,
+      "precision": 0.4323,
+      "false_alerts_per_patient_day": 0.35
+    },
+    {
+      "threshold": 0.85,
+      "recall": 0.1335,
+      "precision": 0.4371,
+      "false_alerts_per_patient_day": 0.3
+    },
+    {
+      "threshold": 0.9,
+      "recall": 0.1087,
+      "precision": 0.405,
+      "false_alerts_per_patient_day": 0.26
+    }
+  ],
+  "severe_hyperglycemia_30m": [
+    {
+      "threshold": 0.05,
+      "recall": 0.7417,
+      "precision": 0.3801,
+      "false_alerts_per_patient_day": 0.56
+    },
+    {
+      "threshold": 0.1,
+      "recall": 0.6879,
+      "precision": 0.4575,
+      "false_alerts_per_patient_day": 0.36
+    },
+    {
+      "threshold": 0.15,
+      "recall": 0.6056,
+      "precision": 0.5015,
+      "false_alerts_per_patient_day": 0.26
+    },
+    {
+      "threshold": 0.2,
+      "recall": 0.5962,
+      "precision": 0.5312,
+      "false_alerts_per_patient_day": 0.22
+    },
+    {
+      "threshold": 0.25,
+      "recall": 0.5469,
+      "precision": 0.5628,
+      "false_alerts_per_patient_day": 0.17
+    },
+    {
+      "threshold": 0.3,
+      "recall": 0.5005,
+      "precision": 0.5527,
+      "false_alerts_per_patient_day": 0.17
+    },
+    {
+      "threshold": 0.35,
+      "recall": 0.4718,
+      "precision": 0.5632,
+      "false_alerts_per_patient_day": 0.15
+    },
+    {
+      "threshold": 0.4,
+      "recall": 0.4457,
+      "precision": 0.5953,
+      "false_alerts_per_patient_day": 0.12
+    },
+    {
+      "threshold": 0.45,
+      "recall": 0.44,
+      "precision": 0.6145,
+      "false_alerts_per_patient_day": 0.11
+    },
+    {
+      "threshold": 0.5,
+      "recall": 0.414,
+      "precision": 0.5817,
+      "false_alerts_per_patient_day": 0.12
+    },
+    {
+      "threshold": 0.55,
+      "recall": 0.3879,
+      "precision": 0.5598,
+      "false_alerts_per_patient_day": 0.12
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.3588,
+      "precision": 0.5504,
+      "false_alerts_per_patient_day": 0.12
+    },
+    {
+      "threshold": 0.65,
+      "recall": 0.3247,
+      "precision": 0.5221,
+      "false_alerts_per_patient_day": 0.12
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.2933,
+      "precision": 0.5234,
+      "false_alerts_per_patient_day": 0.11
+    },
+    {
+      "threshold": 0.75,
+      "recall": 0.271,
+      "precision": 0.5129,
+      "false_alerts_per_patient_day": 0.1
+    },
+    {
+      "threshold": 0.8,
+      "recall": 0.2254,
+      "precision": 0.4848,
+      "false_alerts_per_patient_day": 0.1
+    },
+    {
+      "threshold": 0.85,
+      "recall": 0.1911,
+      "precision": 0.4598,
+      "false_alerts_per_patient_day": 0.09
+    },
+    {
+      "threshold": 0.9,
+      "recall": 0.1703,
+      "precision": 0.4638,
+      "false_alerts_per_patient_day": 0.08
+    }
+  ],
+  "severe_hyperglycemia_60m": [
+    {
+      "threshold": 0.05,
+      "recall": 0.5286,
+      "precision": 0.3534,
+      "false_alerts_per_patient_day": 0.47
+    },
+    {
+      "threshold": 0.1,
+      "recall": 0.5125,
+      "precision": 0.4745,
+      "false_alerts_per_patient_day": 0.25
+    },
+    {
+      "threshold": 0.15,
+      "recall": 0.4749,
+      "precision": 0.5007,
+      "false_alerts_per_patient_day": 0.21
+    },
+    {
+      "threshold": 0.2,
+      "recall": 0.4351,
+      "precision": 0.5025,
+      "false_alerts_per_patient_day": 0.17
+    },
+    {
+      "threshold": 0.25,
+      "recall": 0.4189,
+      "precision": 0.5172,
+      "false_alerts_per_patient_day": 0.15
+    },
+    {
+      "threshold": 0.3,
+      "recall": 0.3765,
+      "precision": 0.5369,
+      "false_alerts_per_patient_day": 0.14
+    },
+    {
+      "threshold": 0.35,
+      "recall": 0.3432,
+      "precision": 0.5248,
+      "false_alerts_per_patient_day": 0.14
+    },
+    {
+      "threshold": 0.4,
+      "recall": 0.3224,
+      "precision": 0.5295,
+      "false_alerts_per_patient_day": 0.13
+    },
+    {
+      "threshold": 0.45,
+      "recall": 0.2959,
+      "precision": 0.5165,
+      "false_alerts_per_patient_day": 0.12
+    },
+    {
+      "threshold": 0.5,
+      "recall": 0.2714,
+      "precision": 0.5473,
+      "false_alerts_per_patient_day": 0.09
+    },
+    {
+      "threshold": 0.55,
+      "recall": 0.2714,
+      "precision": 0.5838,
+      "false_alerts_per_patient_day": 0.09
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.2296,
+      "precision": 0.5181,
+      "false_alerts_per_patient_day": 0.09
+    },
+    {
+      "threshold": 0.65,
+      "recall": 0.2214,
+      "precision": 0.5193,
+      "false_alerts_per_patient_day": 0.08
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.2145,
+      "precision": 0.5439,
+      "false_alerts_per_patient_day": 0.08
+    },
+    {
+      "threshold": 0.75,
+      "recall": 0.1984,
+      "precision": 0.5205,
+      "false_alerts_per_patient_day": 0.07
+    },
+    {
+      "threshold": 0.8,
+      "recall": 0.1847,
+      "precision": 0.5682,
+      "false_alerts_per_patient_day": 0.05
+    },
+    {
+      "threshold": 0.85,
+      "recall": 0.1644,
+      "precision": 0.5262,
+      "false_alerts_per_patient_day": 0.05
+    },
+    {
+      "threshold": 0.9,
+      "recall": 0.1466,
+      "precision": 0.4737,
+      "false_alerts_per_patient_day": 0.04
+    }
+  ],
+  "severe_hyperglycemia_120m": [
+    {
+      "threshold": 0.05,
+      "recall": 0.2538,
+      "precision": 0.2687,
+      "false_alerts_per_patient_day": 0.38
+    },
+    {
+      "threshold": 0.1,
+      "recall": 0.2057,
+      "precision": 0.2895,
+      "false_alerts_per_patient_day": 0.26
+    },
+    {
+      "threshold": 0.15,
+      "recall": 0.1962,
+      "precision": 0.3821,
+      "false_alerts_per_patient_day": 0.15
+    },
+    {
+      "threshold": 0.2,
+      "recall": 0.1799,
+      "precision": 0.4449,
+      "false_alerts_per_patient_day": 0.12
+    },
+    {
+      "threshold": 0.25,
+      "recall": 0.1649,
+      "precision": 0.4192,
+      "false_alerts_per_patient_day": 0.09
+    },
+    {
+      "threshold": 0.3,
+      "recall": 0.1489,
+      "precision": 0.4879,
+      "false_alerts_per_patient_day": 0.07
+    },
+    {
+      "threshold": 0.35,
+      "recall": 0.1412,
+      "precision": 0.49,
+      "false_alerts_per_patient_day": 0.07
+    },
+    {
+      "threshold": 0.4,
+      "recall": 0.1118,
+      "precision": 0.3593,
+      "false_alerts_per_patient_day": 0.07
+    },
+    {
+      "threshold": 0.45,
+      "recall": 0.1136,
+      "precision": 0.3708,
+      "false_alerts_per_patient_day": 0.06
+    },
+    {
+      "threshold": 0.5,
+      "recall": 0.1024,
+      "precision": 0.3259,
+      "false_alerts_per_patient_day": 0.05
+    },
+    {
+      "threshold": 0.55,
+      "recall": 0.099,
+      "precision": 0.3165,
+      "false_alerts_per_patient_day": 0.05
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.099,
+      "precision": 0.3341,
+      "false_alerts_per_patient_day": 0.04
+    },
+    {
+      "threshold": 0.65,
+      "recall": 0.0865,
+      "precision": 0.3,
+      "false_alerts_per_patient_day": 0.04
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.0796,
+      "precision": 0.3205,
+      "false_alerts_per_patient_day": 0.03
+    },
+    {
+      "threshold": 0.75,
+      "recall": 0.0585,
+      "precision": 0.2379,
+      "false_alerts_per_patient_day": 0.02
+    },
+    {
+      "threshold": 0.8,
+      "recall": 0.0482,
+      "precision": 0.2492,
+      "false_alerts_per_patient_day": 0.01
+    },
+    {
+      "threshold": 0.85,
+      "recall": 0.0344,
+      "precision": 0.3083,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.9,
+      "recall": 0.0275,
+      "precision": 0.3667,
+      "false_alerts_per_patient_day": 0.0
+    }
+  ],
+  "hypoglycemia_30m": [
+    {
+      "threshold": 0.05,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.1,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.15,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.2,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.25,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.3,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.35,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.4,
+      "recall": 0.0,
+      "precision": 0.0017,
+      "false_alerts_per_patient_day": 0.26
+    },
+    {
+      "threshold": 0.45,
+      "recall": 0.032,
+      "precision": 0.0079,
+      "false_alerts_per_patient_day": 0.81
+    },
+    {
+      "threshold": 0.5,
+      "recall": 0.0,
+      "precision": 0.0023,
+      "false_alerts_per_patient_day": 1.07
+    },
+    {
+      "threshold": 0.55,
+      "recall": 0.0205,
+      "precision": 0.0053,
+      "false_alerts_per_patient_day": 0.69
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.0267,
+      "precision": 0.003,
+      "false_alerts_per_patient_day": 0.8
+    },
+    {
+      "threshold": 0.65,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.51
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.75,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.8,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.85,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.9,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    }
+  ],
+  "hypoglycemia_60m": [
+    {
+      "threshold": 0.05,
+      "recall": 0.3542,
+      "precision": 0.1462,
+      "false_alerts_per_patient_day": 0.5
+    },
+    {
+      "threshold": 0.1,
+      "recall": 0.2667,
+      "precision": 0.1987,
+      "false_alerts_per_patient_day": 0.26
+    },
+    {
+      "threshold": 0.15,
+      "recall": 0.2104,
+      "precision": 0.2436,
+      "false_alerts_per_patient_day": 0.18
+    },
+    {
+      "threshold": 0.2,
+      "recall": 0.1757,
+      "precision": 0.2086,
+      "false_alerts_per_patient_day": 0.13
+    },
+    {
+      "threshold": 0.25,
+      "recall": 0.1043,
+      "precision": 0.2369,
+      "false_alerts_per_patient_day": 0.09
+    },
+    {
+      "threshold": 0.3,
+      "recall": 0.1043,
+      "precision": 0.2959,
+      "false_alerts_per_patient_day": 0.06
+    },
+    {
+      "threshold": 0.35,
+      "recall": 0.0756,
+      "precision": 0.2431,
+      "false_alerts_per_patient_day": 0.06
+    },
+    {
+      "threshold": 0.4,
+      "recall": 0.1068,
+      "precision": 0.2894,
+      "false_alerts_per_patient_day": 0.04
+    },
+    {
+      "threshold": 0.45,
+      "recall": 0.0668,
+      "precision": 0.2076,
+      "false_alerts_per_patient_day": 0.05
+    },
+    {
+      "threshold": 0.5,
+      "recall": 0.0668,
+      "precision": 0.2667,
+      "false_alerts_per_patient_day": 0.03
+    },
+    {
+      "threshold": 0.55,
+      "recall": 0.0463,
+      "precision": 0.2523,
+      "false_alerts_per_patient_day": 0.03
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.0606,
+      "precision": 0.26,
+      "false_alerts_per_patient_day": 0.02
+    },
+    {
+      "threshold": 0.65,
+      "recall": 0.0454,
+      "precision": 0.2089,
+      "false_alerts_per_patient_day": 0.03
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.0294,
+      "precision": 0.1555,
+      "false_alerts_per_patient_day": 0.03
+    },
+    {
+      "threshold": 0.75,
+      "recall": 0.0071,
+      "precision": 0.0333,
+      "false_alerts_per_patient_day": 0.03
+    },
+    {
+      "threshold": 0.8,
+      "recall": 0.0071,
+      "precision": 0.05,
+      "false_alerts_per_patient_day": 0.02
+    },
+    {
+      "threshold": 0.85,
+      "recall": 0.0071,
+      "precision": 0.0667,
+      "false_alerts_per_patient_day": 0.03
+    },
+    {
+      "threshold": 0.9,
+      "recall": 0.0071,
+      "precision": 0.0667,
+      "false_alerts_per_patient_day": 0.01
+    }
+  ],
+  "hypoglycemia_120m": [
+    {
+      "threshold": 0.05,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.1,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.15,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.2,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.25,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.3,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.35,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.4,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.01
+    },
+    {
+      "threshold": 0.45,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.41
+    },
+    {
+      "threshold": 0.5,
+      "recall": 0.1357,
+      "precision": 0.0135,
+      "false_alerts_per_patient_day": 0.79
+    },
+    {
+      "threshold": 0.55,
+      "recall": 0.0429,
+      "precision": 0.0077,
+      "false_alerts_per_patient_day": 0.44
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.0597,
+      "precision": 0.0196,
+      "false_alerts_per_patient_day": 1.08
+    },
+    {
+      "threshold": 0.65,
+      "recall": 0.0267,
+      "precision": 0.0023,
+      "false_alerts_per_patient_day": 0.65
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.0133,
+      "precision": 0.0051,
+      "false_alerts_per_patient_day": 0.08
+    },
+    {
+      "threshold": 0.75,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.8,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.85,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    },
+    {
+      "threshold": 0.9,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_alerts_per_patient_day": 0.0
+    }
+  ],
+  "spike_30m": [
+    {
+      "threshold": 0.05,
+      "recall": 0.2903,
+      "precision": 0.3227,
+      "false_alerts_per_patient_day": 2.9
+    },
+    {
+      "threshold": 0.1,
+      "recall": 0.4005,
+      "precision": 0.3623,
+      "false_alerts_per_patient_day": 3.22
+    },
+    {
+      "threshold": 0.15,
+      "recall": 0.4753,
+      "precision": 0.3892,
+      "false_alerts_per_patient_day": 3.12
+    },
+    {
+      "threshold": 0.2,
+      "recall": 0.544,
+      "precision": 0.4142,
+      "false_alerts_per_patient_day": 2.86
+    },
+    {
+      "threshold": 0.25,
+      "recall": 0.5663,
+      "precision": 0.441,
+      "false_alerts_per_patient_day": 2.63
+    },
+    {
+      "threshold": 0.3,
+      "recall": 0.5762,
+      "precision": 0.4634,
+      "false_alerts_per_patient_day": 2.43
+    },
+    {
+      "threshold": 0.35,
+      "recall": 0.591,
+      "precision": 0.4794,
+      "false_alerts_per_patient_day": 2.21
+    },
+    {
+      "threshold": 0.4,
+      "recall": 0.5986,
+      "precision": 0.4922,
+      "false_alerts_per_patient_day": 2.04
+    },
+    {
+      "threshold": 0.45,
+      "recall": 0.6022,
+      "precision": 0.5105,
+      "false_alerts_per_patient_day": 1.87
+    },
+    {
+      "threshold": 0.5,
+      "recall": 0.5991,
+      "precision": 0.5241,
+      "false_alerts_per_patient_day": 1.69
+    },
+    {
+      "threshold": 0.55,
+      "recall": 0.5842,
+      "precision": 0.528,
+      "false_alerts_per_patient_day": 1.59
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.5775,
+      "precision": 0.5389,
+      "false_alerts_per_patient_day": 1.45
+    },
+    {
+      "threshold": 0.65,
+      "recall": 0.5489,
+      "precision": 0.5448,
+      "false_alerts_per_patient_day": 1.34
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.5263,
+      "precision": 0.5669,
+      "false_alerts_per_patient_day": 1.16
+    },
+    {
+      "threshold": 0.75,
+      "recall": 0.4779,
+      "precision": 0.583,
+      "false_alerts_per_patient_day": 0.97
+    },
+    {
+      "threshold": 0.8,
+      "recall": 0.4095,
+      "precision": 0.5933,
+      "false_alerts_per_patient_day": 0.79
+    },
+    {
+      "threshold": 0.85,
+      "recall": 0.3052,
+      "precision": 0.5953,
+      "false_alerts_per_patient_day": 0.57
+    },
+    {
+      "threshold": 0.9,
+      "recall": 0.1621,
+      "precision": 0.6159,
+      "false_alerts_per_patient_day": 0.29
+    }
+  ],
+  "spike_60m": [
+    {
+      "threshold": 0.05,
+      "recall": 0.2479,
+      "precision": 0.2678,
+      "false_alerts_per_patient_day": 3.13
+    },
+    {
+      "threshold": 0.1,
+      "recall": 0.3989,
+      "precision": 0.323,
+      "false_alerts_per_patient_day": 3.43
+    },
+    {
+      "threshold": 0.15,
+      "recall": 0.4865,
+      "precision": 0.3622,
+      "false_alerts_per_patient_day": 3.26
+    },
+    {
+      "threshold": 0.2,
+      "recall": 0.5468,
+      "precision": 0.4002,
+      "false_alerts_per_patient_day": 2.93
+    },
+    {
+      "threshold": 0.25,
+      "recall": 0.5799,
+      "precision": 0.4308,
+      "false_alerts_per_patient_day": 2.68
+    },
+    {
+      "threshold": 0.3,
+      "recall": 0.6045,
+      "precision": 0.4545,
+      "false_alerts_per_patient_day": 2.47
+    },
+    {
+      "threshold": 0.35,
+      "recall": 0.616,
+      "precision": 0.4764,
+      "false_alerts_per_patient_day": 2.22
+    },
+    {
+      "threshold": 0.4,
+      "recall": 0.619,
+      "precision": 0.4916,
+      "false_alerts_per_patient_day": 2.04
+    },
+    {
+      "threshold": 0.45,
+      "recall": 0.6322,
+      "precision": 0.515,
+      "false_alerts_per_patient_day": 1.85
+    },
+    {
+      "threshold": 0.5,
+      "recall": 0.6208,
+      "precision": 0.5329,
+      "false_alerts_per_patient_day": 1.65
+    },
+    {
+      "threshold": 0.55,
+      "recall": 0.6136,
+      "precision": 0.5449,
+      "false_alerts_per_patient_day": 1.54
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.6021,
+      "precision": 0.5666,
+      "false_alerts_per_patient_day": 1.36
+    },
+    {
+      "threshold": 0.65,
+      "recall": 0.5864,
+      "precision": 0.5831,
+      "false_alerts_per_patient_day": 1.22
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.5663,
+      "precision": 0.6132,
+      "false_alerts_per_patient_day": 1.04
+    },
+    {
+      "threshold": 0.75,
+      "recall": 0.5171,
+      "precision": 0.6372,
+      "false_alerts_per_patient_day": 0.84
+    },
+    {
+      "threshold": 0.8,
+      "recall": 0.4606,
+      "precision": 0.6802,
+      "false_alerts_per_patient_day": 0.62
+    },
+    {
+      "threshold": 0.85,
+      "recall": 0.3538,
+      "precision": 0.707,
+      "false_alerts_per_patient_day": 0.42
+    },
+    {
+      "threshold": 0.9,
+      "recall": 0.2026,
+      "precision": 0.7732,
+      "false_alerts_per_patient_day": 0.18
+    }
+  ],
+  "spike_120m": [
+    {
+      "threshold": 0.05,
+      "recall": 0.0738,
+      "precision": 0.1263,
+      "false_alerts_per_patient_day": 3.73
+    },
+    {
+      "threshold": 0.1,
+      "recall": 0.1277,
+      "precision": 0.1746,
+      "false_alerts_per_patient_day": 4.16
+    },
+    {
+      "threshold": 0.15,
+      "recall": 0.1633,
+      "precision": 0.2018,
+      "false_alerts_per_patient_day": 4.07
+    },
+    {
+      "threshold": 0.2,
+      "recall": 0.2076,
+      "precision": 0.2289,
+      "false_alerts_per_patient_day": 3.76
+    },
+    {
+      "threshold": 0.25,
+      "recall": 0.238,
+      "precision": 0.2575,
+      "false_alerts_per_patient_day": 3.5
+    },
+    {
+      "threshold": 0.3,
+      "recall": 0.2573,
+      "precision": 0.2755,
+      "false_alerts_per_patient_day": 3.28
+    },
+    {
+      "threshold": 0.35,
+      "recall": 0.2789,
+      "precision": 0.3005,
+      "false_alerts_per_patient_day": 2.96
+    },
+    {
+      "threshold": 0.4,
+      "recall": 0.2987,
+      "precision": 0.319,
+      "false_alerts_per_patient_day": 2.74
+    },
+    {
+      "threshold": 0.45,
+      "recall": 0.3186,
+      "precision": 0.3384,
+      "false_alerts_per_patient_day": 2.53
+    },
+    {
+      "threshold": 0.5,
+      "recall": 0.3212,
+      "precision": 0.3489,
+      "false_alerts_per_patient_day": 2.31
+    },
+    {
+      "threshold": 0.55,
+      "recall": 0.3314,
+      "precision": 0.3604,
+      "false_alerts_per_patient_day": 2.17
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.3418,
+      "precision": 0.3749,
+      "false_alerts_per_patient_day": 1.97
+    },
+    {
+      "threshold": 0.65,
+      "recall": 0.337,
+      "precision": 0.3989,
+      "false_alerts_per_patient_day": 1.77
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.3434,
+      "precision": 0.4159,
+      "false_alerts_per_patient_day": 1.57
+    },
+    {
+      "threshold": 0.75,
+      "recall": 0.3336,
+      "precision": 0.4541,
+      "false_alerts_per_patient_day": 1.27
+    },
+    {
+      "threshold": 0.8,
+      "recall": 0.3175,
+      "precision": 0.4994,
+      "false_alerts_per_patient_day": 0.97
+    },
+    {
+      "threshold": 0.85,
+      "recall": 0.2623,
+      "precision": 0.5454,
+      "false_alerts_per_patient_day": 0.64
+    },
+    {
+      "threshold": 0.9,
+      "recall": 0.1531,
+      "precision": 0.6164,
+      "false_alerts_per_patient_day": 0.29
+    }
+  ]
+}

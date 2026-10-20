@@ -1,0 +1,16 @@
+{
+  "lightgbm": {
+    "learning_rate": 0.06014321882783976,
+    "num_leaves": 30,
+    "min_child_samples": 31,
+    "subsample": 0.8186841117373118,
+    "colsample_bytree": 0.6739417822102108,
+    "n_estimators": 150
+  },
+  "gru": {
+    "hidden_dim": 96,
+    "num_layers": 1,
+    "dropout": 0.13503708430850453,
+    "lr": 0.0019202236698783511
+  }
+}

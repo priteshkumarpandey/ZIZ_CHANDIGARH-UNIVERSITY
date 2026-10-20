@@ -1,0 +1,258 @@
+{
+  "operating_points": {
+    "hyperglycemia_30m": {
+      "event": "hyperglycemia",
+      "horizon_minutes": 30,
+      "threshold": 0.28,
+      "target_sensitivity": 0.8,
+      "false_alert_budget": 1.0
+    },
+    "severe_hyperglycemia_30m": {
+      "event": "severe_hyperglycemia",
+      "horizon_minutes": 30,
+      "threshold": 0.06,
+      "target_sensitivity": 0.8,
+      "false_alert_budget": 1.0
+    },
+    "hypoglycemia_30m": {
+      "event": "hypoglycemia",
+      "horizon_minutes": 30,
+      "threshold": 0.48,
+      "target_sensitivity": 0.8,
+      "false_alert_budget": 1.0
+    },
+    "spike_30m": {
+      "event": "spike",
+      "horizon_minutes": 30,
+      "threshold": 0.74,
+      "target_sensitivity": 0.8,
+      "false_alert_budget": 1.0
+    },
+    "hyperglycemia_60m": {
+      "event": "hyperglycemia",
+      "horizon_minutes": 60,
+      "threshold": 0.52,
+      "target_sensitivity": 0.8,
+      "false_alert_budget": 1.0
+    },
+    "severe_hyperglycemia_60m": {
+      "event": "severe_hyperglycemia",
+      "horizon_minutes": 60,
+      "threshold": 0.14,
+      "target_sensitivity": 0.8,
+      "false_alert_budget": 1.0
+    },
+    "hypoglycemia_60m": {
+      "event": "hypoglycemia",
+      "horizon_minutes": 60,
+      "threshold": 0.02,
+      "target_sensitivity": 0.8,
+      "false_alert_budget": 1.0
+    },
+    "spike_60m": {
+      "event": "spike",
+      "horizon_minutes": 60,
+      "threshold": 0.72,
+      "target_sensitivity": 0.8,
+      "false_alert_budget": 1.0
+    },
+    "hyperglycemia_120m": {
+      "event": "hyperglycemia",
+      "horizon_minutes": 120,
+      "threshold": 0.78,
+      "target_sensitivity": 0.8,
+      "false_alert_budget": 1.0
+    },
+    "severe_hyperglycemia_120m": {
+      "event": "severe_hyperglycemia",
+      "horizon_minutes": 120,
+      "threshold": 0.62,
+      "target_sensitivity": 0.8,
+      "false_alert_budget": 1.0
+    },
+    "hypoglycemia_120m": {
+      "event": "hypoglycemia",
+      "horizon_minutes": 120,
+      "threshold": 0.66,
+      "target_sensitivity": 0.8,
+      "false_alert_budget": 1.0
+    },
+    "spike_120m": {
+      "event": "spike",
+      "horizon_minutes": 120,
+      "threshold": 0.88,
+      "target_sensitivity": 0.8,
+      "false_alert_budget": 1.0
+    }
+  },
+  "test_metrics": {
+    "hyperglycemia_30m": {
+      "precision": 0.6604,
+      "recall": 0.5476,
+      "false_alerts_per_patient_day": 0.59,
+      "lead_time_median": 20.0,
+      "lead_time_iqr": 40.0,
+      "share_detected_30m_early": 39.13,
+      "total_events": 126.0,
+      "detected_events": 69.0,
+      "total_episodes": 159.0,
+      "true_episodes": 105.0,
+      "false_episodes": 54.0,
+      "operating_threshold": 0.28
+    },
+    "severe_hyperglycemia_30m": {
+      "precision": 0.5122,
+      "recall": 0.7949,
+      "false_alerts_per_patient_day": 0.44,
+      "lead_time_median": 25.0,
+      "lead_time_iqr": 45.0,
+      "share_detected_30m_early": 48.39,
+      "total_events": 39.0,
+      "detected_events": 31.0,
+      "total_episodes": 82.0,
+      "true_episodes": 42.0,
+      "false_episodes": 40.0,
+      "operating_threshold": 0.06
+    },
+    "hypoglycemia_30m": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "false_alerts_per_patient_day": 0.03,
+      "lead_time_median": 0.0,
+      "lead_time_iqr": 0.0,
+      "share_detected_30m_early": 0.0,
+      "total_events": 25.0,
+      "detected_events": 0.0,
+      "total_episodes": 3.0,
+      "true_episodes": 0.0,
+      "false_episodes": 3.0,
+      "operating_threshold": 0.48
+    },
+    "spike_30m": {
+      "precision": 0.5894,
+      "recall": 0.5253,
+      "false_alerts_per_patient_day": 1.1,
+      "lead_time_median": 30.0,
+      "lead_time_iqr": 30.0,
+      "share_detected_30m_early": 50.37,
+      "total_events": 257.0,
+      "detected_events": 135.0,
+      "total_episodes": 246.0,
+      "true_episodes": 145.0,
+      "false_episodes": 101.0,
+      "operating_threshold": 0.74
+    },
+    "hyperglycemia_60m": {
+      "precision": 0.7083,
+      "recall": 0.1032,
+      "false_alerts_per_patient_day": 0.08,
+      "lead_time_median": 60.0,
+      "lead_time_iqr": 80.0,
+      "share_detected_30m_early": 69.23,
+      "total_events": 126.0,
+      "detected_events": 13.0,
+      "total_episodes": 24.0,
+      "true_episodes": 17.0,
+      "false_episodes": 7.0,
+      "operating_threshold": 0.52
+    },
+    "severe_hyperglycemia_60m": {
+      "precision": 0.5814,
+      "recall": 0.5641,
+      "false_alerts_per_patient_day": 0.2,
+      "lead_time_median": 47.5,
+      "lead_time_iqr": 73.75,
+      "share_detected_30m_early": 63.64,
+      "total_events": 39.0,
+      "detected_events": 22.0,
+      "total_episodes": 43.0,
+      "true_episodes": 25.0,
+      "false_episodes": 18.0,
+      "operating_threshold": 0.14
+    },
+    "hypoglycemia_60m": {
+      "precision": 0.1628,
+      "recall": 0.6,
+      "false_alerts_per_patient_day": 1.18,
+      "lead_time_median": 40.0,
+      "lead_time_iqr": 52.5,
+      "share_detected_30m_early": 53.33,
+      "total_events": 25.0,
+      "detected_events": 15.0,
+      "total_episodes": 129.0,
+      "true_episodes": 21.0,
+      "false_episodes": 108.0,
+      "operating_threshold": 0.02
+    },
+    "spike_60m": {
+      "precision": 0.6836,
+      "recall": 0.5992,
+      "false_alerts_per_patient_day": 0.88,
+      "lead_time_median": 55.0,
+      "lead_time_iqr": 30.0,
+      "share_detected_30m_early": 85.71,
+      "total_events": 257.0,
+      "detected_events": 154.0,
+      "total_episodes": 256.0,
+      "true_episodes": 175.0,
+      "false_episodes": 81.0,
+      "operating_threshold": 0.72
+    },
+    "hyperglycemia_120m": {
+      "precision": 0.4727,
+      "recall": 0.1508,
+      "false_alerts_per_patient_day": 0.32,
+      "lead_time_median": 85.0,
+      "lead_time_iqr": 85.0,
+      "share_detected_30m_early": 73.68,
+      "total_events": 126.0,
+      "detected_events": 19.0,
+      "total_episodes": 55.0,
+      "true_episodes": 26.0,
+      "false_episodes": 29.0,
+      "operating_threshold": 0.78
+    },
+    "severe_hyperglycemia_120m": {
+      "precision": 0.3,
+      "recall": 0.0769,
+      "false_alerts_per_patient_day": 0.08,
+      "lead_time_median": 25.0,
+      "lead_time_iqr": 50.0,
+      "share_detected_30m_early": 33.33,
+      "total_events": 39.0,
+      "detected_events": 3.0,
+      "total_episodes": 10.0,
+      "true_episodes": 3.0,
+      "false_episodes": 7.0,
+      "operating_threshold": 0.62
+    },
+    "hypoglycemia_120m": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "false_alerts_per_patient_day": 0.36,
+      "lead_time_median": 0.0,
+      "lead_time_iqr": 0.0,
+      "share_detected_30m_early": 0.0,
+      "total_events": 25.0,
+      "detected_events": 0.0,
+      "total_episodes": 33.0,
+      "true_episodes": 0.0,
+      "false_episodes": 33.0,
+      "operating_threshold": 0.66
+    },
+    "spike_120m": {
+      "precision": 0.5714,
+      "recall": 0.2062,
+      "false_alerts_per_patient_day": 0.46,
+      "lead_time_median": 90.0,
+      "lead_time_iqr": 20.0,
+      "share_detected_30m_early": 100.0,
+      "total_events": 257.0,
+      "detected_events": 53.0,
+      "total_episodes": 98.0,
+      "true_episodes": 56.0,
+      "false_episodes": 42.0,
+      "operating_threshold": 0.88
+    }
+  }
+}

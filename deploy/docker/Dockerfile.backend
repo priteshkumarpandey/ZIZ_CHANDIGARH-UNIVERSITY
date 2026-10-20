@@ -1,0 +1,51 @@
+# Multi-stage build for GlucoTwin API
+FROM python:3.11-slim AS builder
+
+WORKDIR /app
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY pyproject.toml .
+COPY README.md .
+
+RUN pip install --upgrade pip && \
+    pip install torch --index-url https://download.pytorch.org/whl/cpu && \
+    pip install . && \
+    pip uninstall -y nvidia-nccl-cu12 triton || true && \
+    find /usr/local/lib/python3.11/site-packages -name "*.pyc" -delete && \
+    find /usr/local/lib/python3.11/site-packages -name "__pycache__" -type d -exec rm -rf {} + || true && \
+    find /usr/local/lib/python3.11/site-packages -type d \( -name "tests" -o -name "test" \) -exec rm -rf {} + || true
+
+# Runner stage
+FROM python:3.11-slim AS runner
+
+WORKDIR /app
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
+COPY --from=builder /usr/local/bin /usr/local/bin
+
+COPY src/ ./src/
+COPY scripts/ ./scripts/
+COPY reports/ ./reports/
+COPY data/external/indian_meal_templates.csv ./data/external/
+COPY DATA_LICENSES.md ./
+
+EXPOSE 8000
+
+CMD ["uvicorn", "src.glucotwin.serving.app:app", "--host", "0.0.0.0", "--port", "8000"]

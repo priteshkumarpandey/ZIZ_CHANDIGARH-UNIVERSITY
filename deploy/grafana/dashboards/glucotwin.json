@@ -1,0 +1,82 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "Prediction Inference Latency (p95)",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(glucotwin_prediction_latency_seconds_bucket[5m])) by (le))",
+          "legendFormat": "p95 Latency (s)"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "id": 2,
+      "title": "Stream Ingestion Lag",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "avg(glucotwin_stream_lag_seconds) by (patient_id)",
+          "legendFormat": "Stream Lag (s) - {{patient_id}}"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "id": 3,
+      "title": "Adverse Glycemic Alerts Fired",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum(rate(glucotwin_alerts_fired_total[5m])) by (event_type, alert_usable)",
+          "legendFormat": "{{event_type}} (usable={{alert_usable}})"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "id": 4,
+      "title": "Predictions Scored Count",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum(rate(glucotwin_predictions_scored_total[5m])) by (horizon_minutes)",
+          "legendFormat": "Horizon +{{horizon_minutes}}m"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 16 },
+      "id": 5,
+      "title": "API Request Latency by Endpoint",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum(rate(glucotwin_api_request_duration_seconds_sum[5m])) by (endpoint)",
+          "legendFormat": "{{endpoint}}"
+        }
+      ]
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 39,
+  "tags": ["glucotwin", "diabetes", "streaming"],
+  "timezone": "browser",
+  "title": "GlucoTwin Operational Telemetry",
+  "version": 2
+}

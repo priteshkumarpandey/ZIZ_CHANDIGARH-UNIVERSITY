@@ -1,0 +1,65 @@
+data:
+  raw_dir: "data/raw"
+  interim_dir: "data/interim"
+  processed_dir: "data/processed"
+  include_hupa_t1d: false
+  random_seed: 42
+
+hba1c_cutoffs:
+  t2d: 6.5
+  prediabetes: 5.7
+
+harmonization:
+  resample_interval_minutes: 5
+  max_interpolation_minutes: 30
+  glucose_min_mgdl: 40.0
+  glucose_max_mgdl: 500.0
+  heart_rate_min: 30.0
+  heart_rate_max: 220.0
+
+features:
+  lookback_minutes: 360 # 6 hours = 72 time steps at 5-minute sampling
+  horizons_minutes: [30, 60, 120] # 6, 12, 24 steps
+  hyperglycemia_threshold: 180.0
+  severe_hyperglycemia_threshold: 250.0
+  hypoglycemia_threshold: 70.0
+  severe_hypoglycemia_threshold: 54.0
+  spike_threshold_mgdl: 40.0
+  spike_window_minutes: 60
+
+splits:
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  stratify_by_status: true
+  cross_dataset_test: null
+
+alerts:
+  rule: "sustained_threshold"
+  operating_threshold: 0.50
+  target_sensitivity: 0.80
+  false_alert_budget: 1.0
+  preceding_window_minutes: 120
+  min_early_minutes: 30
+  gate_min_recall: 0.40
+  gate_min_precision: 0.30
+  gate_require_reliable: true
+
+whatif:
+  raw_monotonicity_target: 0.90
+  constrained_monotonicity_target: 0.99
+  data_agreement_pearson_target: 0.30
+  data_agreement_positive_share_target: 0.95
+  zero_meal_max_delta_target: 0.0001
+
+safety_floor_alerts:
+  # Common CGM safety floor and trend thresholds based on standard device alerting rules (not clinically validated models).
+  low_threshold_mgdl: 70.0
+  urgent_low_threshold_mgdl: 54.0
+  rapid_fall_rate_mgdl_per_min: 2.0
+  rapid_fall_duration_minutes: 15
+  rapid_fall_ceiling_mgdl: 120.0
+
+
+
+

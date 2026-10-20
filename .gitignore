@@ -1,0 +1,128 @@
+# Python build and packaging
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+/lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+.aws/
+*aws_credentials*
+*aws_config*
+
+# Testing & quality caches
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Frontend & Node
+node_modules/
+.next/
+frontend/.next/
+out/
+frontend/out/
+*.tsbuildinfo
+
+# Clinical datasets and local raw/interim/processed data
+data/raw/
+data/interim/
+data/processed/
+data/demo/
+data/external/*
+!data/external/.gitkeep
+data/external/ifct_book/
+data/**/*ifct*
+*ifct_extract*
+*IFCT2017*
+data/**/*ai-readi*
+data/**/*ai_readi*
+data/**/*aireadi*
+
+# Whitelist derived Indian meal library and recipe estimates
+!data/external/indian_meal_templates.csv
+!data/external/meal_recipes.csv
+
+# Databases and twin SQLite
+*.db
+*.sqlite
+*.sqlite3
+data/*.db
+data/**/*.db
+
+# DVC & MLflow
+.dvc/cache/
+.dvc/tmp/
+mlruns/
+
+# Model checkpoints (whitelist all shipped checkpoints so demo mode works)
+models/checkpoints/*
+!models/checkpoints/.gitkeep
+!models/checkpoints/*.json
+!models/checkpoints/*.pt
+!models/checkpoints/*.joblib
+!models/checkpoints/*.md
+!models/checkpoints/NOTICE.md
+
+# Reports: ignore large test prediction parquets, keep metrics, tables and figures
+reports/test_predictions_*.parquet
+
+# Logs & Videos
+*.log
+logs/
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# OS and Editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Agent instructions, memory, scratch and state files
+AGENTS.md
+GEMINI.md
+CLAUDE.md
+.gemini/
+.gemini
+.agent/
+.agent
+.agents/
+.agents
+.antigravity/
+.antigravity
+.system_generated/
+scratch/
+tmp/
+
+# Backups and temporary edits
+*_backup*
+*.bak
+*.orig

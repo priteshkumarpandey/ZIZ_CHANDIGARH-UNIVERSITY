@@ -1,0 +1,46 @@
+stages:
+  ingest:
+    cmd: python -m src.glucotwin.cli data ingest --config params.yaml
+    params:
+      - data
+      - hba1c_cutoffs
+    outs:
+      - data/interim/patients.parquet
+      - data/interim/timeseries.parquet
+      - data/interim/meals.parquet
+      - data/interim/validation_glucose.parquet
+
+  harmonize:
+    cmd: python -m src.glucotwin.cli data harmonize --config params.yaml
+    deps:
+      - data/interim/patients.parquet
+      - data/interim/timeseries.parquet
+      - data/interim/meals.parquet
+    params:
+      - harmonization
+    outs:
+      - data/processed/patients_processed.parquet
+      - data/processed/timeseries_processed.parquet
+      - data/processed/meals_processed.parquet
+      - data/processed/data_quality_report.json
+
+  features:
+    cmd: python -m src.glucotwin.cli data features --config params.yaml
+    deps:
+      - data/processed/patients_processed.parquet
+      - data/processed/timeseries_processed.parquet
+      - data/processed/meals_processed.parquet
+    params:
+      - features
+    outs:
+      - data/processed/features/windowed_features.npz
+      - data/processed/features/feature_metadata.json
+
+  split:
+    cmd: python -m src.glucotwin.cli data split --config params.yaml
+    deps:
+      - data/processed/patients_processed.parquet
+    params:
+      - splits
+    outs:
+      - data/processed/split_manifest.json

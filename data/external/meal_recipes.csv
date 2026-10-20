@@ -1,0 +1,56 @@
+dish,ingredient,ifct_code,raw_grams,cooking_note,is_assumption
+Whole Wheat Roti (Chapati),Wheat flour atta,A019,48.0,48g raw whole wheat atta kneaded with water and cooked on griddle yielding 60g cooked roti serving,true
+Steamed White Rice (Sona Masoori),Rice raw milled,A015,50.0,50g raw rice cooked with 100g water (2:1 absorption) yielding 150g steamed rice serving,true
+Steamed Brown Rice,Rice raw brown,A013,50.0,50g raw brown rice cooked with 100g water yielding 150g cooked brown rice serving,true
+Yellow Dal Tadka (Toor Dal),Red gram dal,B021,32.0,32g dry split toor dal cooked in water to soft consistency,true
+Yellow Dal Tadka (Toor Dal),Tomato ripe hybrid,D075,15.0,15g chopped tomato sautéed in tadka,true
+Yellow Dal Tadka (Toor Dal),Onion big,G017,10.0,10g sautéed onion in tadka yielding 150g prepared dal serving,true
+Paneer Tikka / Bhurji,Paneer,L003,90.0,90g fresh paneer diced and grilled or crumbled,true
+Paneer Tikka / Bhurji,Onion big,G017,15.0,15g diced onion sautéed with spices,true
+Paneer Tikka / Bhurji,Tomato ripe hybrid,D075,15.0,15g diced tomato cooked to 120g serving,true
+Masala Dosa with Potato Filling,Rice raw milled,A015,45.0,45g raw rice in fermented batter portion,true
+Masala Dosa with Potato Filling,Black gram dal,B003,15.0,15g urad dal in fermented batter portion,true
+Masala Dosa with Potato Filling,Potato brown skin big,F006,50.0,50g boiled mashed potato spiced filling,true
+Masala Dosa with Potato Filling,Onion big,G017,15.0,15g chopped onion in potato filling cooked on tawa to 180g serving,true
+Steamed Idli (2 pieces),Rice raw milled,A015,30.0,30g raw rice in batter (3:1 ratio),true
+Steamed Idli (2 pieces),Black gram dal,B003,10.0,10g urad dal in batter steamed with water to 100g (2 idlis),true
+Vegetable Sambar,Red gram dal,B021,20.0,20g boiled toor dal base,true
+Vegetable Sambar,Drumstick,D046,15.0,15g sliced drumstick cooked in tamarind broth,true
+Vegetable Sambar,Carrot orange,F002,15.0,15g diced carrot,true
+Vegetable Sambar,Tomato ripe hybrid,D075,15.0,15g chopped tomato,true
+Vegetable Sambar,Onion big,G017,10.0,10g shallot/onion yielding 150g vegetable stew serving,true
+Hyderabadi Chicken Biryani,Rice raw milled,A015,65.0,65g raw rice parboiled and layered,true
+Hyderabadi Chicken Biryani,Chicken breast skinless,N003,80.0,80g skinless chicken pieces,true
+Hyderabadi Chicken Biryani,Onion big,G017,25.0,25g browned onions (birista),true
+Hyderabadi Chicken Biryani,Tomato ripe hybrid,D075,15.0,15g chopped tomato in marinade,true
+Hyderabadi Chicken Biryani,Milk whole Buffalo,L001,20.0,20g whole milk / dahi marinade base slow-cooked (dum) to 250g serving,true
+Kanda Poha (Flattened Rice),Rice flakes,A011,50.0,50g dry flattened rice rinsed in water,true
+Kanda Poha (Flattened Rice),Onion big,G017,25.0,25g chopped sautéed onion (kanda),true
+Kanda Poha (Flattened Rice),Potato brown skin big,F006,20.0,20g diced boiled potato sautéed to 140g serving,true
+Moong Dal Khichdi,Rice raw milled,A015,35.0,35g raw milled rice,true
+Moong Dal Khichdi,Green gram dal,B010,25.0,25g split yellow moong dal pressure cooked with water to 200g serving,true
+Bengali Fish Curry (Macher Jhol),Rohu,S006,90.0,90g fresh rohu fish fillet pan seared,true
+Bengali Fish Curry (Macher Jhol),Potato brown skin big,F006,30.0,30g potato wedges,true
+Bengali Fish Curry (Macher Jhol),Tomato ripe hybrid,D075,15.0,15g tomato puree,true
+Bengali Fish Curry (Macher Jhol),Onion big,G017,15.0,15g onion paste simmered in broth to 180g serving,true
+Gulab Jamun (1 piece),Khoa,L004,20.0,20g mawa/khoa kneaded for dumpling,true
+Gulab Jamun (1 piece),Wheat flour refined,A018,5.0,5g maida binder for dumpling,true
+Gulab Jamun (1 piece),Jaggery cane,I001,20.0,20g cane sugar syrup absorbed into 50g cooked sweet,true
+Masala Chai with 2 tsp Sugar,Milk whole Buffalo,L001,65.0,65g boiled whole milk,true
+Masala Chai with 2 tsp Sugar,Jaggery cane,I001,10.0,10g cane sugar (2 tsp) dissolved in brewed tea and water to 150g,true
+Ragi Roti (Finger Millet),Ragi,A010,45.0,45g ragi flour kneaded with hot water,true
+Ragi Roti (Finger Millet),Onion big,G017,10.0,10g chopped onion folded into dough roasted to 70g roti,true
+Palak Paneer,Spinach,C033,80.0,80g fresh spinach blanched and pureed,true
+Palak Paneer,Paneer,L003,50.0,50g fresh paneer cubes folded into gravy,true
+Palak Paneer,Tomato ripe hybrid,D075,15.0,15g tomato puree,true
+Palak Paneer,Onion big,G017,15.0,15g chopped onion sautéed to 180g prepared dish,true
+Chana Masala (Chickpea Curry),Bengal gram whole,B002,45.0,45g dry whole chickpeas soaked and boiled,true
+Chana Masala (Chickpea Curry),Onion big,G017,20.0,20g chopped onion masala base,true
+Chana Masala (Chickpea Curry),Tomato ripe hybrid,D075,20.0,20g chopped tomato masala simmered to 180g serving,true
+Besan Chilla (Gram Flour Pancake),Bengal gram dal,B001,45.0,45g besan (chana dal flour) mixed with water into batter,true
+Besan Chilla (Gram Flour Pancake),Onion big,G017,15.0,15g chopped onion,true
+Besan Chilla (Gram Flour Pancake),Tomato ripe hybrid,D075,10.0,10g chopped tomato cooked on griddle to 100g pancake,true
+Upma (Semolina / Sooji),Wheat semolina,A022,45.0,45g roasted rava cooked in boiling water,true
+Upma (Semolina / Sooji),Onion big,G017,15.0,15g chopped onion,true
+Upma (Semolina / Sooji),Carrot orange,F002,10.0,10g diced carrot cooked to 150g portion,true
+Curd / Dahi (Plain Whole Milk),Milk whole Cow,L002,150.0,150g pasteurized whole cow milk fermented to 150g curd,true

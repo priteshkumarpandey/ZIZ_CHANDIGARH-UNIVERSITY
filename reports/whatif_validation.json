@@ -1,0 +1,211 @@
+{
+  "monotonicity_test": {
+    "num_windows": 200,
+    "scales_tested": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "base_carbs_g": 50.0,
+    "raw_model_evaluation": {
+      "monotonic_windows_count": 145,
+      "share_monotonic_non_decreasing": 0.725,
+      "pre_specified_target": 0.9,
+      "status": "FAILED (72.5% below target 90.0%)",
+      "explanation": "Raw ML model exhibits high-carbohydrate saturation and dips on 28.5% of windows, failing the 90% unconstrained target."
+    },
+    "constrained_physiology_projection": {
+      "monotonic_windows_count": 200,
+      "share_monotonic_non_decreasing": 1.0,
+      "pre_specified_target": 0.99,
+      "status": "PASSED",
+      "windows_with_constraint_applied": 55,
+      "share_windows_with_constraint": 0.275,
+      "mean_correction_all_windows_mgdl": 0.3943,
+      "mean_correction_constrained_windows_mgdl": 1.4338,
+      "explanation": "Physiological isotonic projection guarantees non-decreasing glycemic excursion for added carbohydrates."
+    }
+  },
+  "data_agreement_test": {
+    "baseline_construction_method": "For each held-out meal at t_meal, historical lookback consists of 72 CGM readings (6h) up to t_meal. The evaluated meal is strictly excluded from baseline inputs (carbs_g=0.0, carbs_last_2h=0.0, time_since_meal_mins=(step+1)*5.0). In scenario counterfactual, meal carbs are injected at t_meal.",
+    "comparable_definitions": "Predicted peak glucose evaluated over +30m, +60m, and +120m horizons compared against observed peak glucose within the same 120-minute postprandial window.",
+    "observed_2h_rise_definition": "Observed 2-hour postprandial rise is defined as the maximum sensor glucose observed in the 120 minutes following meal onset minus baseline glucose at meal onset: delta_g_obs = max(t in [t_meal, t_meal+120m]) glucose(t) - glucose(t_meal), clipped at 0.0.",
+    "partial_correlation_method": "Partial correlation between model predicted rise and observed rise controlling for meal carbohydrate grams: r(pred, obs | carbs) = (r_xy - r_xz * r_yz) / sqrt((1 - r_xz^2) * (1 - r_yz^2)).",
+    "total_meals_evaluated": 497,
+    "pooled_results": {
+      "pearson_r": 0.3777,
+      "spearman_rho": 0.3733,
+      "partial_correlation_controlling_carbs": 0.3293,
+      "positive_effect_share": 0.992
+    },
+    "by_diabetes_status": {
+      "T2D": {
+        "patient_count": 14,
+        "meals_evaluated": 121,
+        "pearson_r": 0.3931,
+        "spearman_rho": 0.4013,
+        "partial_correlation_controlling_carbs": 0.3248,
+        "positive_effect_share": 0.9835,
+        "mean_predicted_rise_mgdl": 32.67,
+        "mean_observed_rise_mgdl": 66.82
+      },
+      "healthy": {
+        "patient_count": 15,
+        "meals_evaluated": 209,
+        "pearson_r": 0.3465,
+        "spearman_rho": 0.3945,
+        "partial_correlation_controlling_carbs": 0.2789,
+        "positive_effect_share": 0.9904,
+        "mean_predicted_rise_mgdl": 25.44,
+        "mean_observed_rise_mgdl": 42.44
+      },
+      "prediabetes": {
+        "patient_count": 16,
+        "meals_evaluated": 167,
+        "pearson_r": 0.3031,
+        "spearman_rho": 0.2849,
+        "partial_correlation_controlling_carbs": 0.2149,
+        "positive_effect_share": 1.0,
+        "mean_predicted_rise_mgdl": 28.3,
+        "mean_observed_rise_mgdl": 53.28
+      }
+    },
+    "per_fold": [
+      {
+        "fold_idx": 0,
+        "test_participants_count": 9,
+        "meals_evaluated": 99,
+        "pearson_r": 0.2052,
+        "spearman_rho": 0.182,
+        "positive_effect_share": 0.9596
+      },
+      {
+        "fold_idx": 1,
+        "test_participants_count": 9,
+        "meals_evaluated": 99,
+        "pearson_r": 0.5235,
+        "spearman_rho": 0.471,
+        "positive_effect_share": 1.0
+      },
+      {
+        "fold_idx": 2,
+        "test_participants_count": 9,
+        "meals_evaluated": 100,
+        "pearson_r": 0.4756,
+        "spearman_rho": 0.5136,
+        "positive_effect_share": 1.0
+      },
+      {
+        "fold_idx": 3,
+        "test_participants_count": 9,
+        "meals_evaluated": 100,
+        "pearson_r": 0.3667,
+        "spearman_rho": 0.3667,
+        "positive_effect_share": 1.0
+      },
+      {
+        "fold_idx": 4,
+        "test_participants_count": 9,
+        "meals_evaluated": 99,
+        "pearson_r": 0.4259,
+        "spearman_rho": 0.4588,
+        "positive_effect_share": 1.0
+      }
+    ],
+    "cross_fold_summary": {
+      "pearson_r_mean": 0.3994,
+      "pearson_r_std": 0.1102,
+      "spearman_rho_mean": 0.3984,
+      "spearman_rho_std": 0.1184,
+      "positive_effect_share_mean": 0.9919,
+      "positive_effect_share_std": 0.0162,
+      "pre_specified_pearson_target": 0.3,
+      "status": "PASSED"
+    }
+  },
+  "calibration_evaluation": {
+    "status": "IMPROVED",
+    "applied_in_simulator": true,
+    "decision_rule": "Linear calibration mapping is applied in simulator only if held-out test fold MAE improves.",
+    "overall_summary": {
+      "mean_slope": 0.9437,
+      "mean_intercept": 25.3838,
+      "raw_mae_mgdl": 31.76,
+      "raw_bias_mgdl": -23.87,
+      "calibrated_mae_mgdl": 29.4,
+      "calibrated_bias_mgdl": -0.29,
+      "mae_improvement_mgdl": 2.36
+    },
+    "per_fold": [
+      {
+        "fold_idx": 0,
+        "slope": 1.0814,
+        "intercept": 19.3991,
+        "mae_raw_mgdl": 37.26,
+        "bias_raw_mgdl": -31.95,
+        "mae_calibrated_mgdl": 31.32,
+        "bias_calibrated_mgdl": -10.85,
+        "mae_improvement_mgdl": 5.95
+      },
+      {
+        "fold_idx": 1,
+        "slope": 0.8177,
+        "intercept": 30.3683,
+        "mae_raw_mgdl": 28.92,
+        "bias_raw_mgdl": -18.12,
+        "mae_calibrated_mgdl": 30.9,
+        "bias_calibrated_mgdl": 6.94,
+        "mae_improvement_mgdl": -1.97
+      },
+      {
+        "fold_idx": 2,
+        "slope": 1.0057,
+        "intercept": 26.1981,
+        "mae_raw_mgdl": 25.21,
+        "bias_raw_mgdl": -13.93,
+        "mae_calibrated_mgdl": 28.58,
+        "bias_calibrated_mgdl": 12.46,
+        "mae_improvement_mgdl": -3.38
+      },
+      {
+        "fold_idx": 3,
+        "slope": 0.965,
+        "intercept": 24.4321,
+        "mae_raw_mgdl": 31.97,
+        "bias_raw_mgdl": -25.55,
+        "mae_calibrated_mgdl": 25.53,
+        "bias_calibrated_mgdl": -2.02,
+        "mae_improvement_mgdl": 6.44
+      },
+      {
+        "fold_idx": 4,
+        "slope": 0.8488,
+        "intercept": 26.5217,
+        "mae_raw_mgdl": 35.44,
+        "bias_raw_mgdl": -29.79,
+        "mae_calibrated_mgdl": 30.66,
+        "bias_calibrated_mgdl": -7.97,
+        "mae_improvement_mgdl": 4.77
+      }
+    ]
+  },
+  "zero_meal_sanity_test": {
+    "max_absolute_delta_mgdl": 0.0,
+    "all_zero_deltas_identical": true,
+    "pre_specified_tolerance_mgdl": 0.0001,
+    "status": "PASSED"
+  },
+  "exercise_effect_specification": {
+    "status": "assumption-based and unvalidated",
+    "origin_of_coefficient": "The clearance coefficient (0.38 mg/dL per active minute per net MET) is an illustrative assumption chosen by the team, with no source and no validation. The effect is capped at 50 mg/dL.",
+    "formula": "delta_glucose = -min(50.0, max(0.0, mets - 1.0) * 0.38 * active_minutes)",
+    "maximum_deduction_ceiling_mgdl": 50.0
+  },
+  "metadata": {
+    "model_version": "v1.0-torchscript-gru",
+    "evaluated_at": "2026-10-10T13:28:28.702702",
+    "notes": "Evaluated using held-out test fold models with zero cross-validation leakage."
+  }
+}
