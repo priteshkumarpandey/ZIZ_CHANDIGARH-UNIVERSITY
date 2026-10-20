@@ -47,6 +47,8 @@ def evaluate_safety_floor_rules(
             raw_v = r.glucose_mgdl
         else:
             raw_v = r
+        if raw_v is None:
+            continue
         try:
             fv = float(raw_v)
             if not np.isnan(fv):

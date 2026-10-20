@@ -101,3 +101,22 @@ def test_empty_and_short_series_graceful():
     assert evaluate_safety_floor_rules([]) == []
     assert evaluate_safety_floor_rules([None, None]) == []
     assert evaluate_safety_floor_rules([100.0]) == []
+
+
+def test_none_and_missing_readings_handled_safely():
+    # 1. Readings containing None values as raw items, dicts with None, and objects with None
+    readings = [
+        None,
+        {"glucose_mgdl": None},
+        {"glucose": None},
+        {"glucose_mgdl": 85.0},
+        None,
+        {"glucose_mgdl": 66.0},
+    ]
+    alerts = evaluate_safety_floor_rules(readings)
+    assert len(alerts) == 1
+    assert alerts[0]["alert_type"] == "low"
+    assert alerts[0]["observed_glucose"] == 66.0
+
+    # 2. All readings are None or contain None
+    assert evaluate_safety_floor_rules([{"glucose_mgdl": None}, {"glucose": None}]) == []
