@@ -20,7 +20,8 @@ jobs:
           cache: "pip"
 
       - name: Print Node Version
-        run: echo "System Node version: $(node --version 2>/dev/null || echo 'Not installed')"
+        run: |
+          echo "System Node version: $(node --version 2>/dev/null || echo 'Not installed')"
 
       - name: Install dependencies
         run: |
@@ -50,13 +51,17 @@ jobs:
           cache: "pip"
 
       - name: Print Node Version
-        run: echo "System Node version: $(node --version 2>/dev/null || echo 'Not installed')"
+        run: |
+          echo "System Node version: $(node --version 2>/dev/null || echo 'Not installed')"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
           pip install -e ".[dev]"
+
+      - name: Generate Synthetic Demo Data
+        run: python scripts/make_demo_data.py
 
       - name: Run Pytest Suite
         run: pytest tests/ -v --cov=src/glucotwin --cov-report=xml
@@ -129,7 +134,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Print Node Version
-        run: echo "System Node version: $(node --version 2>/dev/null || echo 'Not installed')"
+        run: |
+          echo "System Node version: $(node --version 2>/dev/null || echo 'Not installed')"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
